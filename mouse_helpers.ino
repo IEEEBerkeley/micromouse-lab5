@@ -63,9 +63,9 @@ void applyPowerLeft(float power) {
 
   if (power > 0) {
     analogWrite(PIN_MOTOR_LEFT_1, constrain(power * 255.0, 0, 255));
-    analogWrite(PIN_MOTOR_LEFT_2, 0);
+    digitalWrite(PIN_MOTOR_LEFT_2, HIGH);
   } else {
-    analogWrite(PIN_MOTOR_LEFT_1, 0);
+    digitalWrite(PIN_MOTOR_LEFT_1, HIGH);
     analogWrite(PIN_MOTOR_LEFT_2, constrain(power * -255.0, 0, 255));
   }
 }
@@ -76,9 +76,9 @@ void applyPowerRight(float power) {
 
   if (power > 0) {
     analogWrite(PIN_MOTOR_RIGHT_1, constrain(power * 255.0, 0, 255));
-    analogWrite(PIN_MOTOR_RIGHT_2, 0);
+    digitalWrite(PIN_MOTOR_RIGHT_2, HIGH);
   } else {
-    analogWrite(PIN_MOTOR_RIGHT_1, 0);
+    digitalWrite(PIN_MOTOR_RIGHT_1, HIGH);
     analogWrite(PIN_MOTOR_RIGHT_2, constrain(power * -255.0, 0, 255));
   }
 }
